@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --washi: #f5f0e8;
+  --sumi: #1a1a1a;
+  --vermillion: #c0392b;
+  --gold: #d4a017;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--washi);
+  color: var(--sumi);
+  font-family: 'Noto Serif JP', serif;
+  margin: 0;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+/* 和紙テクスチャ風背景 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(ellipse at 20% 80%, rgba(180,160,120,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(160,140,100,0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.canvas-container {
+  position: relative;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+canvas {
+  display: block;
+  cursor: crosshair;
+}
+
+.streak-badge {
+  background: linear-gradient(135deg, var(--vermillion), #e74c3c);
+  color: white;
+  border-radius: 9999px;
+  padding: 2px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.score-reveal {
+  animation: scoreReveal 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scoreReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.brush-stroke-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.brush-stroke-btn:active {
+  transform: scale(0.95);
+}
+
+.rank-s { color: #f39c12; }
+.rank-a { color: #27ae60; }
+.rank-b { color: #2980b9; }
+.rank-c { color: #8e44ad; }
+.rank-d { color: #7f8c8d; }
+
+/* インク滲み風アニメーション */
+@keyframes inkDrop {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.ink-drop {
+  animation: inkDrop 0.3s ease-out forwards;
+}
