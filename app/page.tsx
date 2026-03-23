@@ -31,7 +31,7 @@ export default function HomePage() {
             <div style={{ fontSize: "0.9rem", color: "#555" }}>{kanji.meaning} / {getDifficultyLabel(kanji.difficulty)}</div>
           </div>
           <Link href="/game">
-            <button style={{ width: "100%", padding: "16px", borderRadius: "12px", background: "var(--vermillion)", color: "#fff", fontSize: "1.1rem", fontWeight: 700, border: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(192,57,43,0.4)", fontFamily: "Noto Serif JP, serif" }}>
+            <button aria-label="今日の漢字書道チャレンジを始める" style={{ width: "100%", padding: "16px", borderRadius: "12px", background: "var(--vermillion)", color: "#fff", fontSize: "1.1rem", fontWeight: 700, border: "none", cursor: "pointer", boxShadow: "0 4px 16px rgba(192,57,43,0.4)", fontFamily: "Noto Serif JP, serif", minHeight: "44px" }}>
               今日の漢字を書く →
             </button>
           </Link>
@@ -53,8 +53,8 @@ export default function HomePage() {
           <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: 1.7 }}>毎日プレイして連続記録を更新しよう。<br/>連続が途切れないように、毎日1文字書き続けよう。</p>
         </section>
         <Link href="/game" style={{ display: "block" }}>
-          <button style={{ width: "100%", padding: "18px", borderRadius: "14px", background: "var(--vermillion)", color: "#fff", fontSize: "1.2rem", fontWeight: 700, border: "none", cursor: "pointer", boxShadow: "0 6px 24px rgba(192,57,43,0.45)", fontFamily: "Noto Serif JP, serif" }}>
-            今すくる書道チャレンジ ✏️
+          <button aria-label="今すぐ書道チャレンジを始める" style={{ width: "100%", padding: "18px", borderRadius: "14px", background: "var(--vermillion)", color: "#fff", fontSize: "1.2rem", fontWeight: 700, border: "none", cursor: "pointer", boxShadow: "0 6px 24px rgba(192,57,43,0.45)", fontFamily: "Noto Serif JP, serif", minHeight: "44px" }}>
+            今すぐ書道チャレンジ
           </button>
         </Link>
       </main>
