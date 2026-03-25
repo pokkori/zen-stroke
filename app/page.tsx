@@ -39,9 +39,8 @@ export default function HomePage() {
         <section style={{ marginBottom: "32px" }}>
           <h2 style={{ fontSize: "1.1rem", fontWeight: 700, textAlign: "center", marginBottom: "16px" }}>スコアランク</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: "8px" }}>
-            {[{rank:"S",emoji:"🏆",label:"達人",color:"#f39c12"},{rank:"A",emoji:"⭐",label:"上手い",color:"#27ae60"},{rank:"B",emoji:"✨",label:"なかなか",color:"#2980b9"},{rank:"C",emoji:"👍",label:"もう少し",color:"#8e44ad"},{rank:"D",emoji:"🖌️",label:"練習あるのみ",color:"#7f8c8d"}].map((r) => (
+            {[{rank:"S",label:"達人",color:"#f39c12"},{rank:"A",label:"上手い",color:"#27ae60"},{rank:"B",label:"なかなか",color:"#2980b9"},{rank:"C",label:"もう少し",color:"#8e44ad"},{rank:"D",label:"練習あるのみ",color:"#7f8c8d"}].map((r) => (
               <div key={r.rank} style={{ textAlign: "center", background: "#fff", borderRadius: "12px", padding: "12px 4px", boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
-                <div style={{ fontSize: "1.5rem" }}>{r.emoji}</div>
                 <div style={{ fontSize: "1.4rem", fontWeight: 900, color: r.color }}>{r.rank}</div>
                 <div style={{ fontSize: "0.6rem", color: "#888" }}>{r.label}</div>
               </div>
@@ -49,7 +48,7 @@ export default function HomePage() {
           </div>
         </section>
         <section style={{ background: "#fff", borderRadius: "16px", padding: "20px", marginBottom: "24px", boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }}>
-          <h2 style={{ fontWeight: 700, marginBottom: "8px" }}>🔥 毎日の連続記録</h2>
+          <h2 style={{ fontWeight: 700, marginBottom: "8px" }}>毎日の連続記録</h2>
           <p style={{ fontSize: "0.9rem", color: "#555", lineHeight: 1.7 }}>毎日プレイして連続記録を更新しよう。<br/>連続が途切れないように、毎日1文字書き続けよう。</p>
         </section>
         <Link href="/game" style={{ display: "block" }}>

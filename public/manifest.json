@@ -1,0 +1,15 @@
+{
+  "name": "ZEN STROKE",
+  "short_name": "ZEN STROKE",
+  "description": "今日の漢字を書いてスコアを競おう。Wordle風の毎日書道チャレンジ。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f0e8",
+  "theme_color": "#f5f0e8",
+  "orientation": "portrait",
+  "lang": "ja",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
