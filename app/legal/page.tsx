@@ -1,7 +1,7 @@
 export default function LegalPage() {
   const rows = [
     ["販売業者", "ポッコリラボ"],
-    ["運営責任者", "ポッコリラボ 代表 新美"],
+    ["運営責任者", "ポッコリラボ 代表 新美諭"],
     ["所在地", "〒475-0077 愛知県半田市元山町"],
     ["お問い合わせ", "X(Twitter) @levona_design へのDDM"],
     ["サービス内容", "ZEN STROKE 毎日書道チャレンジ（無料Webアプリ）"],
