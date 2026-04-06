@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["書道", "漢字", "毎日チャレンジ", "Wordle", "ゲーム", "習字"],
   metadataBase: new URL(SITE_URL),
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✏️</text></svg>",
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><path d='M25 75L30 50 70 25 75 30 50 70Z' fill='%23f59e0b'/><path d='M25 75l10-5-5-5Z' fill='%23fbbf24'/></svg>",
   },
   openGraph: {
     title: "ZEN STROKE - 毎日書道チャレンジ",
