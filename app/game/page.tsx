@@ -48,8 +48,8 @@ export default function GamePage() {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "var(--washi)", fontFamily: "Noto Serif JP, serif" }}>
       <header className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "rgba(26,26,26,0.12)" }}>
-        <Link href="/" className="flex items-center gap-2"><span style={{ fontSize: "1.4rem" }}>✏️</span><span style={{ fontWeight: 700, fontSize: "1rem" }}>ZEN STROKE</span></Link>
-        <div className="flex items-center gap-3">{streakData && streakData.streak >= 1 && <span className="streak-badge">🔥 {streakData.streak}日連続</span>}<span style={{ fontSize: "0.8rem", color: "#666" }}>{formattedDate}</span></div>
+        <Link href="/" className="flex items-center gap-2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg><span style={{ fontWeight: 700, fontSize: "1rem" }}>ZEN STROKE</span></Link>
+        <div className="flex items-center gap-3">{streakData && streakData.streak >= 1 && <span className="streak-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="#f97316" aria-hidden="true"><path d="M12 2C8 8 4 12 4 16a8 8 0 0 0 16 0c0-4-4-8-8-14z"/></svg> {streakData.streak}日連続</span>}<span style={{ fontSize: "0.8rem", color: "#666" }}>{formattedDate}</span></div>
       </header>
       <main className="flex-1 flex flex-col items-center px-4 py-4 gap-4">
         <div className="text-center">
