@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useDrawing } from "@/hooks/useDrawing";
 import { getTodayKanji, getTodayString, getDifficultyLabel, getDifficultyColor } from "@/lib/kanji";
-import { scoreDrawing, StrokeScore, getRankEmoji, getRankLabel, getRankColor, updateStreak, hasPlayedToday, loadStreak, StreakData } from "@/lib/scoring";
+import { scoreDrawing, StrokeScore, getRankLabel, getRankColor, updateStreak, hasPlayedToday, loadStreak, StreakData } from "@/lib/scoring";
 import Link from "next/link";
 
 const CANVAS_SIZE = 320;
@@ -39,7 +39,7 @@ export default function GamePage() {
     const result = scoreDrawing(userCanvas, refCanvas, kanji.strokeCount);
     setScore(result);
     const streak = updateStreak(todayStr); setStreakData(streak); setAlreadyPlayed(true);
-    const parts: string[] = ["#ZenStroke " + kanji.kanji + "(" + kanji.reading + ")", getRankEmoji(result.rank) + " Rank" + result.rank, "Score: " + result.total + "pts", streak.streak >= 2 ? "🔥 " + streak.streak + "日連続" : "", "https://zen-stroke.vercel.app"].filter(Boolean);
+    const parts: string[] = ["#ZenStroke " + kanji.kanji + "(" + kanji.reading + ")", "Rank" + result.rank, "Score: " + result.total + "pts", streak.streak >= 2 ? streak.streak + "日連続" : "", "https://zen-stroke.vercel.app"].filter(Boolean);
     setShareMessage(parts.join("\n")); setIsSubmitting(false); setTimeout(() => setShowResult(true), 100);
   }, [hasDrawn, isSubmitting, canvasRef, kanji, todayStr]);
   const handleShare = useCallback(() => { window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareMessage), "_blank", "noopener,noreferrer"); }, [shareMessage]);
@@ -75,7 +75,6 @@ export default function GamePage() {
         {showResult && score && (
           <div style={{ width: "100%", maxWidth: "384px", borderRadius: "16px", padding: "20px", background: "#fff", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", animation: "scoreReveal 0.6s ease forwards" }}>
             <div style={{ textAlign: "center", marginBottom: "16px" }}>
-              <div style={{ fontSize: "3.5rem" }}>{getRankEmoji(score.rank)}</div>
               <div style={{ fontSize: "3rem", fontWeight: 900 }} className={getRankColor(score.rank)}>{score.rank}</div>
               <div style={{ color: "#555" }}>{getRankLabel(score.rank)}</div>
             </div>

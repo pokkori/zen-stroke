@@ -92,7 +92,7 @@ export function scoreDrawing(
 
 export function getRankEmoji(rank: string): string {
   return (
-    { S: "🏆", A: "⭐", B: "✨", C: "👍", D: "🖌️" }[rank] ?? "🖌️"
+    { S: "", A: "", B: "", C: "", D: "" }[rank] ?? ""
   );
 }
 
